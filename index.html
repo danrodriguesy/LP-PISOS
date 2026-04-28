@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pisos e revestimentos de alta qualidade: porcelanato, laminado, vinílico, cerâmico e pedras naturais. Durabilidade, estilo e sofisticação para sua obra. Orçamento grátis!">
+  <meta name="keywords" content="piso porcelanato, piso laminado, piso vinílico, revestimento cerâmico, pedras naturais, piso para sala, piso para banheiro, revestimento de piso">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="PisoArte Revestimentos">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PisoArte — Revestimentos que Transformam Ambientes">
+  <meta property="og:description" content="Porcelanato, laminado, vinílico, cerâmico e pedras naturais. Durabilidade e design para sua obra.">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="theme-color" content="#1a1208">
+  <title>PisoArte — Revestimentos que Transformam Ambientes</title>
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0e0c08;
+      --cream: #f5f0e8;
+      --gold: #c8962a;
+      --gold-light: #e8b84b;
+      --stone: #8b7355;
+      --stone-light: #c4b49a;
+      --white: #fefcf8;
+      --gray: #6b6356;
+      --bg-dark: #1a1208;
+      --bg-mid: #251c0f;
+      --accent: #d4a843;
+      --green: #4a6741;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAVIGATION ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.4s, box-shadow 0.4s;
+    }
+    nav.scrolled {
+      background: rgba(14,12,8,0.96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 30px rgba(0,0,0,0.3);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--ink) !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 2px;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--gold-light) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--bg-dark);
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        url('https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1800&q=80&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center 40%;
+      opacity: 0.35;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(14,12,8,0.92) 0%, rgba(14,12,8,0.5) 60%, rgba(37,28,15,0.7) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      padding-top: 6rem;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(200,150,42,0.15);
+      border: 1px solid rgba(200,150,42,0.4);
+      color: var(--gold-light);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.45rem 1rem;
+      border-radius: 2px;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.2s forwards;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.4s forwards;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .hero p {
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      color: rgba(245,240,232,0.75);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.6s forwards;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.8s forwards;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--gold);
+      color: var(--ink);
+      padding: 1rem 2rem;
+      border-radius: 2px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      border: 1.5px solid rgba(245,240,232,0.4);
+      color: var(--white);
+      padding: 1rem 2rem;
+      border-radius: 2px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--gold); background: rgba(200,150,42,0.1); }
+    .hero-stats {
+      position: absolute;
+      bottom: 3rem;
+      right: 2rem;
+      display: flex;
+      gap: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 1s forwards;
+    }
+    .hero-stat {
+      text-align: right;
+    }
+    .hero-stat strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+    .hero-stat span {
+      font-size: 0.75rem;
+      color: rgba(245,240,232,0.6);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--ink);
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      border-bottom: 1px solid rgba(200,150,42,0.2);
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: rgba(245,240,232,0.7);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .trust-item svg { color: var(--gold); flex-shrink: 0; }
+
+    /* ── SECTION BASE ── */
+    section { padding: 6rem 2rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+    .section-title em { font-style: italic; color: var(--stone); }
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--gray);
+      max-width: 580px;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* ── ABOUT ── */
+    #sobre { background: var(--cream); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .about-image-wrap {
+      position: relative;
+    }
+    .about-img-main {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 3px;
+      display: block;
+    }
+    .about-img-accent {
+      position: absolute;
+      bottom: -2rem;
+      right: -2rem;
+      width: 48%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 3px;
+      border: 4px solid var(--cream);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+    .about-text { padding-left: 1rem; }
+    .about-feature {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      align-items: flex-start;
+    }
+    .about-feature-icon {
+      width: 44px; height: 44px;
+      background: var(--gold);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .about-feature-icon svg { color: var(--ink); }
+    .about-feature h4 {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+      color: var(--ink);
+    }
+    .about-feature p {
+      font-size: 0.875rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* ── PRODUCTS ── */
+    #produtos { background: var(--white); }
+    .products-intro {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 4rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .product-card {
+      position: relative;
+      border-radius: 3px;
+      overflow: hidden;
+      cursor: pointer;
+      group: true;
+    }
+    .product-card:first-child {
+      grid-column: span 2;
+    }
+    .product-img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .product-card:first-child .product-img {
+      height: 480px;
+    }
+    .product-card:hover .product-img { transform: scale(1.04); }
+    .product-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(14,12,8,0.88) 0%, rgba(14,12,8,0.1) 60%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2rem;
+    }
+    .product-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--ink);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      border-radius: 2px;
+      margin-bottom: 0.8rem;
+      width: fit-content;
+    }
+    .product-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .product-card:first-child .product-name { font-size: 2.2rem; }
+    .product-desc {
+      font-size: 0.85rem;
+      color: rgba(245,240,232,0.75);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+    .product-features {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .product-feature-pill {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(245,240,232,0.85);
+      font-size: 0.7rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 100px;
+      font-weight: 500;
+    }
+
+    /* ── PROCESS ── */
+    #processo { background: var(--bg-dark); }
+    #processo .section-title { color: var(--white); }
+    #processo .section-desc { color: rgba(245,240,232,0.65); }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+    .process-step {
+      padding: 2rem;
+      border: 1px solid rgba(200,150,42,0.2);
+      border-radius: 3px;
+      position: relative;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .process-step:hover {
+      border-color: rgba(200,150,42,0.6);
+      background: rgba(200,150,42,0.05);
+    }
+    .process-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 900;
+      color: rgba(200,150,42,0.15);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .process-icon {
+      width: 48px; height: 48px;
+      background: rgba(200,150,42,0.1);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+    }
+    .process-icon svg { color: var(--gold); }
+    .process-step h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.7rem;
+    }
+    .process-step p {
+      font-size: 0.875rem;
+      color: rgba(245,240,232,0.6);
+      line-height: 1.7;
+    }
+
+    /* ── GALLERY ── */
+    #galeria { background: var(--cream); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 280px 280px;
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .gallery-item { overflow: hidden; border-radius: 3px; }
+    .gallery-item:nth-child(1) { grid-column: 1 / 6; grid-row: 1; }
+    .gallery-item:nth-child(2) { grid-column: 6 / 9; grid-row: 1; }
+    .gallery-item:nth-child(3) { grid-column: 9 / 13; grid-row: 1; }
+    .gallery-item:nth-child(4) { grid-column: 1 / 5; grid-row: 2; }
+    .gallery-item:nth-child(5) { grid-column: 5 / 9; grid-row: 2; }
+    .gallery-item:nth-child(6) { grid-column: 9 / 13; grid-row: 2; }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+
+    /* ── TESTIMONIALS ── */
+    #depoimentos { background: var(--white); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+    .testimonial-card {
+      padding: 2.2rem;
+      background: var(--cream);
+      border-radius: 3px;
+      border-left: 3px solid var(--gold);
+      position: relative;
+    }
+    .testimonial-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--gold);
+      line-height: 0.5;
+      margin-bottom: 1rem;
+    }
+    .testimonial-text {
+      font-size: 0.95rem;
+      color: var(--gray);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .testimonial-avatar {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--gold);
+    }
+    .testimonial-author-info strong {
+      display: block;
+      font-weight: 700;
+      font-size: 0.875rem;
+      color: var(--ink);
+    }
+    .testimonial-author-info span {
+      font-size: 0.78rem;
+      color: var(--stone);
+    }
+    .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.2rem; }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      background: var(--bg-dark);
+      padding: 7rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1600&q=60&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.12;
+    }
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .cta-content .section-title { color: var(--white); margin-bottom: 1.2rem; }
+    .cta-content p {
+      color: rgba(245,240,232,0.7);
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+    .cta-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      max-width: 560px;
+      margin: 0 auto 1.5rem;
+    }
+    .cta-form .cta-form-full {
+      grid-column: 1 / -1;
+    }
+    .cta-form-full {
+      grid-column: 1 / -1;
+    }
+    .cta-input {
+      padding: 1rem 1.3rem;
+      background: rgba(255,255,255,0.08);
+      border: 1.5px solid rgba(200,150,42,0.3);
+      border-radius: 3px;
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      width: 100%;
+    }
+    .cta-input:focus {
+      border-color: var(--gold);
+      background: rgba(255,255,255,0.12);
+    }
+    .cta-input::placeholder { color: rgba(245,240,232,0.4); }
+    .cta-submit {
+      background: var(--gold);
+      color: var(--ink);
+      border: none;
+      padding: 1rem 1.6rem;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+      border-radius: 3px;
+      grid-column: 1 / -1;
+    }
+    .cta-submit:hover { background: var(--gold-light); }
+    .cta-note {
+      font-size: 0.78rem;
+      color: rgba(245,240,232,0.4);
+      letter-spacing: 0.03em;
+    }
+
+    /* ── FAQ ── */
+    #faq { background: var(--cream); }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      margin-top: 3.5rem;
+      background: rgba(139,115,85,0.2);
+    }
+    .faq-item {
+      background: var(--cream);
+      padding: 2rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .faq-item:hover { background: #ede8df; }
+    .faq-item summary {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--ink);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .faq-item summary::after {
+      content: '+';
+      font-size: 1.4rem;
+      color: var(--gold);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-item[open] summary::after {
+      transform: rotate(45deg);
+    }
+    .faq-item p {
+      font-size: 0.875rem;
+      color: var(--gray);
+      line-height: 1.75;
+      padding-top: 1rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: rgba(245,240,232,0.7);
+      padding: 4rem 2rem 2rem;
+    }
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(245,240,232,0.1);
+    }
+    .footer-brand .nav-logo { font-size: 1.6rem; display: block; margin-bottom: 1rem; }
+    .footer-brand p {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .footer-social { display: flex; gap: 0.8rem; }
+    .footer-social a {
+      width: 38px; height: 38px;
+      border: 1px solid rgba(245,240,232,0.15);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(245,240,232,0.6);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+    .footer-col h5 {
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.6rem; }
+    .footer-col ul li a {
+      color: rgba(245,240,232,0.6);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--gold-light); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: rgba(245,240,232,0.35);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* ── WHATSAPP FLOAT ── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: #25D366;
+      color: white;
+      padding: 0.9rem 1.4rem;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      box-shadow: 0 8px 30px rgba(37,211,102,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: pulse-green 2.5s infinite;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.05) translateY(-2px);
+      box-shadow: 0 12px 40px rgba(37,211,102,0.5);
+      animation: none;
+    }
+    .whatsapp-float svg { flex-shrink: 0; }
+    @keyframes pulse-green {
+      0%, 100% { box-shadow: 0 8px 30px rgba(37,211,102,0.4); }
+      50% { box-shadow: 0 8px 50px rgba(37,211,102,0.7); }
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-img-accent { display: none; }
+      .products-grid { grid-template-columns: 1fr 1fr; }
+      .product-card:first-child { grid-column: span 2; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 1rem; }
+      .nav-links { display: none; }
+      .hero-stats { display: none; }
+      .products-grid { grid-template-columns: 1fr; }
+      .product-card:first-child { grid-column: span 1; }
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+      .gallery-item { grid-column: auto !important; grid-row: auto !important; }
+      .gallery-item img { height: 200px; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .whatsapp-float span { display: none; }
+      .whatsapp-float { padding: 1rem; border-radius: 50%; }
+    }
+    @media (max-width: 480px) {
+      section { padding: 4rem 1.2rem; }
+      .hero-content { padding: 0 1.2rem; padding-top: 5rem; }
+      .cta-form { grid-template-columns: 1fr; gap: 0.6rem; }
+      .cta-input { border-radius: 3px; }
+      .cta-form-full { grid-column: 1; }
+      .cta-submit { grid-column: 1; }
+      .cta-section { padding: 5rem 1.2rem; }
+    }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "PisoArte Revestimentos",
+    "description": "Empresa especializada em pisos e revestimentos: porcelanato, laminado, vinílico, cerâmico e pedras naturais.",
+    "url": "https://pisoarte.com.br",
+    "telephone": "+5511999999999",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "priceRange": "$$",
+    "sameAs": [
+      "https://instagram.com/pisoarte",
+      "https://facebook.com/pisoarte"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar" role="navigation" aria-label="Menu principal">
+    <div class="nav-logo">Piso<span>Arte</span></div>
+    <ul class="nav-links" role="list">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#depoimentos">Clientes</a></li>
+      <li><a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C+gostaria+de+um+or%C3%A7amento!" class="nav-cta" target="_blank" rel="noopener noreferrer">Orçamento Grátis</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio" aria-label="Seção principal">
+    <div class="hero-bg" role="img" aria-label="Interior moderno com piso de porcelanato"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Especialistas em Revestimentos desde 2008</div>
+      <h1>O piso certo<br>transforma <em>tudo</em></h1>
+      <p>Porcelanato, laminado, vinílico, cerâmico e pedras naturais. Combinamos durabilidade, manutenção fácil e design de alto padrão para sua obra.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C+gostaria+de+um+or%C3%A7amento!" class="btn-primary" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Solicitar Orçamento
+        </a>
+        <a href="#produtos" class="btn-secondary">
+          Ver Produtos
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-stats" aria-label="Números da empresa">
+      <div class="hero-stat">
+        <strong>+1.200</strong>
+        <span>Obras entregues</span>
+      </div>
+      <div class="hero-stat">
+        <strong>15+</strong>
+        <span>Anos de mercado</span>
+      </div>
+      <div class="hero-stat">
+        <strong>98%</strong>
+        <span>Clientes satisfeitos</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar" role="complementary" aria-label="Diferenciais">
+    <div class="trust-item">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+      Garantia de 5 anos
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8zM1 16h15M5.5 21a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM18.5 21a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg>
+      Entrega em SP e Grande SP
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      Equipe especializada
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+      Orçamento sem compromisso
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Produtos certificados
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="sobre" aria-labelledby="sobre-titulo">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-wrap reveal">
+          <img
+            src="https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?w=900&q=80&auto=format&fit=crop"
+            alt="Profissional instalando revestimento de porcelanato"
+            class="about-img-main"
+            loading="lazy"
+            width="900"
+            height="520"
+          >
+          <img
+            src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80&auto=format&fit=crop"
+            alt="Detalhe de piso de porcelanato de alta qualidade"
+            class="about-img-accent"
+            loading="lazy"
+            width="600"
+            height="240"
+          >
+        </div>
+        <div class="about-text">
+          <p class="section-label">Quem somos</p>
+          <h2 class="section-title" id="sobre-titulo">Mais de 15 anos<br>transformando <em>espaços</em></h2>
+          <p class="section-desc" style="margin-bottom: 2.5rem;">A PisoArte nasceu da paixão por criar ambientes que impressionam. Somos especialistas em revestimentos de piso — do showroom à instalação — com foco em qualidade e satisfação total do cliente.</p>
+          <div class="about-feature reveal reveal-delay-1">
+            <div class="about-feature-icon" aria-hidden="true">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h4>Durabilidade comprovada</h4>
+              <p>Trabalhamos apenas com fabricantes certificados. Nossos produtos resistem ao desgaste diário, à umidade e ao tempo — com garantia real para você.</p>
+            </div>
+          </div>
+          <div class="about-feature reveal reveal-delay-2">
+            <div class="about-feature-icon" aria-hidden="true">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+            </div>
+            <div>
+              <h4>Consultoria personalizada</h4>
+              <p>Nossos especialistas analisam seu ambiente, uso e orçamento para indicar o revestimento ideal — sem enrolação, com soluções práticas.</p>
+            </div>
+          </div>
+          <div class="about-feature reveal reveal-delay-3">
+            <div class="about-feature-icon" aria-hidden="true">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div>
+              <h4>Instalação no prazo</h4>
+              <p>Equipe técnica certificada que respeita cronogramas. Seu projeto finalizado com precisão e sem imprevistos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="produtos" aria-labelledby="produtos-titulo">
+    <div class="container">
+      <div class="products-intro">
+        <div>
+          <p class="section-label">Nossa linha</p>
+          <h2 class="section-title" id="produtos-titulo">Revestimentos para<br>cada <em>necessidade</em></h2>
+        </div>
+        <p class="section-desc">Do banheiro à varanda, do conforto da sala à resistência da cozinha — temos a solução certa para cada cômodo.</p>
+      </div>
+      <div class="products-grid">
+
+        <!-- Porcelanato -->
+        <div class="product-card reveal">
+          <img
+            src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=1200&q=80&auto=format&fit=crop"
+            alt="Piso de porcelanato em sala de estar moderna"
+            class="product-img"
+            loading="lazy"
+            width="1200"
+            height="480"
+          >
+          <div class="product-overlay">
+            <span class="product-tag">Mais Vendido</span>
+            <h3 class="product-name">Porcelanato</h3>
+            <p class="product-desc">Alta resistência, absorção de água mínima e visual sofisticado. Ideal para salas, banheiros, cozinhas e áreas úmidas.</p>
+            <div class="product-features">
+              <span class="product-feature-pill">Resistente à umidade</span>
+              <span class="product-feature-pill">Fácil higienização</span>
+              <span class="product-feature-pill">Alta durabilidade</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Laminado -->
+        <div class="product-card reveal reveal-delay-1">
+          <img
+            src="https://images.unsplash.com/photo-1562184552-997c461abbe6?w=700&q=80&auto=format&fit=crop"
+            alt="Piso laminado em quarto aconchegante"
+            class="product-img"
+            loading="lazy"
+            width="700"
+            height="380"
+          >
+          <div class="product-overlay">
+            <span class="product-tag">Conforto Térmico</span>
+            <h3 class="product-name">Laminado</h3>
+            <p class="product-desc">Estética de madeira, instalação rápida e conforto térmico incomparável. Perfeito para quartos e salas secas.</p>
+            <div class="product-features">
+              <span class="product-feature-pill">Warm touch</span>
+              <span class="product-feature-pill">Instalação rápida</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vinílico -->
+        <div class="product-card reveal reveal-delay-2">
+          <img
+            src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=700&q=80&auto=format&fit=crop"
+            alt="Piso vinílico em escritório moderno"
+            class="product-img"
+            loading="lazy"
+            width="700"
+            height="380"
+          >
+          <div class="product-overlay">
+            <span class="product-tag">Acústico</span>
+            <h3 class="product-name">Vinílico</h3>
+            <p class="product-desc">Prático, impermeável e com excelente isolamento acústico. Versátil para ambientes residenciais e comerciais.</p>
+            <div class="product-features">
+              <span class="product-feature-pill">Impermeável</span>
+              <span class="product-feature-pill">Anti-ruído</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cerâmico -->
+        <div class="product-card reveal reveal-delay-1">
+          <img
+            src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=700&q=80&auto=format&fit=crop"
+            alt="Revestimento cerâmico colorido em área interna"
+            class="product-img"
+            loading="lazy"
+            width="700"
+            height="380"
+          >
+          <div class="product-overlay">
+            <span class="product-tag">Grande Variedade</span>
+            <h3 class="product-name">Cerâmico</h3>
+            <p class="product-desc">Custo-benefício imbatível com enorme variedade de cores, texturas e formatos para interiores.</p>
+            <div class="product-features">
+              <span class="product-feature-pill">Econômico</span>
+              <span class="product-feature-pill">Variedade</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pedras Naturais -->
+        <div class="product-card reveal reveal-delay-2">
+          <img
+            src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=700&q=80&auto=format&fit=crop"
+            alt="Piso de pedra natural em área externa"
+            class="product-img"
+            loading="lazy"
+            width="700"
+            height="380"
+          >
+          <div class="product-overlay">
+            <span class="product-tag">Área Externa</span>
+            <h3 class="product-name">Pedras Naturais</h3>
+            <p class="product-desc">Granito, mármore, ardósia e quartzito. Beleza única e durabilidade extrema para áreas externas.</p>
+            <div class="product-features">
+              <span class="product-feature-pill">Antiderrapante</span>
+              <span class="product-feature-pill">Resistente</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="processo" aria-labelledby="processo-titulo">
+    <div class="container">
+      <div style="max-width: 600px;">
+        <p class="section-label" style="color: var(--gold-light);">Como trabalhamos</p>
+        <h2 class="section-title" id="processo-titulo">Do projeto à<br><em>entrega</em> perfeita</h2>
+        <p class="section-desc">Um processo claro, transparente e eficiente — para você ter total segurança em cada etapa da sua obra.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step reveal">
+          <div class="process-number" aria-hidden="true">01</div>
+          <div class="process-icon" aria-hidden="true">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </div>
+          <h4>Consulta Gratuita</h4>
+          <p>Entre em contato pelo WhatsApp. Nossa equipe entende seu projeto, ambiente e estilo para oferecer as melhores opções.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-1">
+          <div class="process-number" aria-hidden="true">02</div>
+          <div class="process-icon" aria-hidden="true">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          </div>
+          <h4>Orçamento Detalhado</h4>
+          <p>Enviamos proposta clara com especificações, quantidade necessária, valor e prazo — sem surpresas na entrega.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="process-number" aria-hidden="true">03</div>
+          <div class="process-icon" aria-hidden="true">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/></svg>
+          </div>
+          <h4>Entrega Pontual</h4>
+          <p>Material entregue no local da obra, no dia combinado. Embalagem reforçada para chegar sem avarias.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-3">
+          <div class="process-number" aria-hidden="true">04</div>
+          <div class="process-icon" aria-hidden="true">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h4>Instalação & Suporte</h4>
+          <p>Equipe técnica para instalação profissional e suporte pós-obra. Sua satisfação é nossa garantia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="galeria" aria-labelledby="galeria-titulo">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 0;">
+        <p class="section-label">Portfólio</p>
+        <h2 class="section-title" id="galeria-titulo">Obras que<br>nos <em>orgulham</em></h2>
+      </div>
+      <div class="gallery-grid" role="list" aria-label="Galeria de obras realizadas">
+        <div class="gallery-item reveal" role="listitem">
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&q=75&auto=format&fit=crop" alt="Sala de estar com piso de porcelanato cinza" loading="lazy" width="900" height="280">
+        </div>
+        <div class="gallery-item reveal reveal-delay-1" role="listitem">
+          <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=75&auto=format&fit=crop" alt="Banheiro com revestimento de mármore" loading="lazy" width="600" height="280">
+        </div>
+        <div class="gallery-item reveal reveal-delay-2" role="listitem">
+          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=75&auto=format&fit=crop" alt="Cozinha com piso cerâmico antiderrapante" loading="lazy" width="600" height="280">
+        </div>
+        <div class="gallery-item reveal" role="listitem">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=75&auto=format&fit=crop" alt="Quarto com piso laminado amadeirado" loading="lazy" width="700" height="280">
+        </div>
+        <div class="gallery-item reveal reveal-delay-1" role="listitem">
+          <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=700&q=75&auto=format&fit=crop" alt="Área externa com pedras naturais" loading="lazy" width="700" height="280">
+        </div>
+        <div class="gallery-item reveal reveal-delay-2" role="listitem">
+          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=75&auto=format&fit=crop" alt="Escritório com piso vinílico moderno" loading="lazy" width="600" height="280">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="depoimentos" aria-labelledby="depoimentos-titulo">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 0;">
+        <p class="section-label">Depoimentos</p>
+        <h2 class="section-title" id="depoimentos-titulo">O que nossos<br>clientes <em>dizem</em></h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-quote" aria-hidden="true">"</div>
+          <div class="stars" role="img" aria-label="5 estrelas">★★★★★</div>
+          <p class="testimonial-text">Reformamos toda a nossa casa com porcelanato da PisoArte. O atendimento foi impecável e o resultado superou todas as expectativas. O piso ficou lindo e a instalação foi feita em 3 dias.</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80&auto=format&fit=crop&crop=face" alt="Foto de Mariana Oliveira" class="testimonial-avatar" loading="lazy" width="46" height="46">
+            <div class="testimonial-author-info">
+              <strong>Mariana Oliveira</strong>
+              <span>Residência no Morumbi, SP</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-quote" aria-hidden="true">"</div>
+          <div class="stars" role="img" aria-label="5 estrelas">★★★★★</div>
+          <p class="testimonial-text">Usamos piso vinílico no nosso escritório e foi a melhor escolha. O isolamento acústico fez uma diferença enorme e a equipe de instalação foi muito profissional e organizada.</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80&auto=format&fit=crop&crop=face" alt="Foto de Ricardo Souza" class="testimonial-avatar" loading="lazy" width="46" height="46">
+            <div class="testimonial-author-info">
+              <strong>Ricardo Souza</strong>
+              <span>Empresa de tecnologia, Pinheiros</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-quote" aria-hidden="true">"</div>
+          <div class="stars" role="img" aria-label="5 estrelas">★★★★★</div>
+          <p class="testimonial-text">A consultoria deles foi fundamental para escolher a pedra natural certa para minha área externa. Resistente, bonita e fácil de limpar. Recomendo sem hesitar para qualquer projeto.</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80&auto=format&fit=crop&crop=face" alt="Foto de Ana Carvalho" class="testimonial-avatar" loading="lazy" width="46" height="46">
+            <div class="testimonial-author-info">
+              <strong>Ana Carvalho</strong>
+              <span>Casa em Alphaville</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <div class="cta-section" role="complementary" aria-label="Chamada para ação">
+    <div class="cta-bg" role="img" aria-label="Ambiente interno com piso de alta qualidade"></div>
+    <div class="cta-content">
+      <p class="section-label" style="color: var(--gold-light);">Pronto para transformar seu espaço?</p>
+      <h2 class="section-title">Receba seu orçamento<br>em <em>minutos</em></h2>
+      <p>Fale com nossa equipe agora pelo WhatsApp. Sem compromisso, sem enrolação — só a solução ideal para sua obra.</p>
+      <form class="cta-form" action="https://wa.me/5511999999999" method="get" target="_blank" rel="noopener noreferrer" onsubmit="handleCTAForm(event)" aria-label="Formulário de orçamento">
+        <label for="nome-cta" class="sr-only">Seu nome</label>
+        <input id="nome-cta" name="text" type="text" class="cta-input" placeholder="Seu nome" autocomplete="name" required>
+        
+        <label for="telefone-cta" class="sr-only">Seu WhatsApp</label>
+        <input id="telefone-cta" name="text" type="tel" class="cta-input" placeholder="Seu WhatsApp" autocomplete="tel" required>
+        
+        <label for="email-cta" class="sr-only">Seu email</label>
+        <input id="email-cta" name="text" type="email" class="cta-input cta-form-full" placeholder="Seu email (opcional)" autocomplete="email">
+        
+        <label for="mensagem-cta" class="sr-only">Sua mensagem</label>
+        <textarea id="mensagem-cta" name="text" class="cta-input cta-form-full" placeholder="Sua mensagem..." rows="3" style="resize: vertical; min-height: 80px;"></textarea>
+        
+        <button type="submit" class="cta-submit">Solicitar orçamento</button>
+      </form>
+      <p class="cta-note">🔒 Seus dados são 100% seguros. Não fazemos SPAM.</p>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <section id="faq" aria-labelledby="faq-titulo">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <p class="section-label">Dúvidas frequentes</p>
+        <h2 class="section-title" id="faq-titulo">Dúvidas que<br>você pode <em>ter</em></h2>
+      </div>
+      <div class="faq-grid">
+        <details class="faq-item reveal">
+          <summary>Qual é o melhor piso para banheiro?</summary>
+          <p>Para banheiros recomendamos porcelanato ou cerâmica com coeficiente de atrito (PEI 3+) para áreas molhadas. O porcelanato é ideal por ter baixíssima absorção de água e fácil limpeza. Temos opções antiderrapantes específicas para banheiros.</p>
+        </details>
+        <details class="faq-item reveal reveal-delay-1">
+          <summary>Posso instalar piso laminado em cozinha?</summary>
+          <p>Não recomendamos. O piso laminado é sensível à umidade e pode inchar com água. Para cozinhas, o porcelanato ou vinílico SPC são as melhores opções — impermeáveis, resistentes e fáceis de limpar.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Qual a diferença entre porcelanato e cerâmica?</summary>
+          <p>O porcelanato tem absorção de água abaixo de 0,5%, é mais denso e resistente que a cerâmica. A cerâmica tem absorção de 3% a 6% e custo menor. Para áreas úmidas e alto tráfego, o porcelanato é superior. Para interiores secos com menor tráfego, a cerâmica é excelente custo-benefício.</p>
+        </details>
+        <details class="faq-item reveal reveal-delay-1">
+          <summary>Vocês fazem a instalação ou apenas vendem?</summary>
+          <p>Fazemos os dois! Vendemos os materiais e temos equipe de instalação profissional certificada. Também orientamos sobre instalação para quem prefere contratar mão de obra separada. Nossa consultoria garante a escolha correta da argamassa, rejunte e acabamentos.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Quanto tempo dura um piso laminado?</summary>
+          <p>Com cuidados adequados, um piso laminado de boa qualidade dura de 15 a 25 anos. A durabilidade depende da classe de uso (AC3 para residencial, AC5 para comercial) e de cuidados básicos como evitar excesso de água na limpeza e usar protetores nas pernas dos móveis.</p>
+        </details>
+        <details class="faq-item reveal reveal-delay-1">
+          <summary>O piso vinílico é resistente para pet?</summary>
+          <p>Sim! O piso vinílico SPC é uma das melhores opções para lares com animais. É resistente a arranhões, impermeável a acidentes e fácil de limpar. Recomendamos a versão SPC (rígida) em vez da LVT flexível para maior durabilidade com pets.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="nav-logo">Piso<span>Arte</span></span>
+        <p>Especialistas em revestimentos de piso desde 2008. Porcelanato, laminado, vinílico, cerâmico e pedras naturais com qualidade garantida e instalação profissional.</p>
+        <div class="footer-social" aria-label="Redes sociais">
+          <a href="#" aria-label="Instagram PisoArte" rel="noopener noreferrer">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook PisoArte" rel="noopener noreferrer">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://wa.me/5511999999999" aria-label="WhatsApp PisoArte" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Produtos</h5>
+        <ul>
+          <li><a href="#produtos">Porcelanato</a></li>
+          <li><a href="#produtos">Piso Laminado</a></li>
+          <li><a href="#produtos">Piso Vinílico</a></li>
+          <li><a href="#produtos">Cerâmico</a></li>
+          <li><a href="#produtos">Pedras Naturais</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="#sobre">Sobre nós</a></li>
+          <li><a href="#processo">Como trabalhamos</a></li>
+          <li><a href="#galeria">Portfólio</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contato</h5>
+        <ul>
+          <li><a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">(11) 9 9999-9999</a></li>
+          <li><a href="mailto:contato@pisoarte.com.br">contato@pisoarte.com.br</a></li>
+          <li><a href="#" rel="noopener noreferrer">São Paulo — SP</a></li>
+          <li><a href="#" rel="noopener noreferrer">Seg–Sex: 8h–18h</a></li>
+          <li><a href="#" rel="noopener noreferrer">Sáb: 8h–13h</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 PisoArte Revestimentos. Todos os direitos reservados.</span>
+      <span>CNPJ: 00.000.000/0001-00</span>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a
+    href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Vim+pelo+site+e+gostaria+de+um+or%C3%A7amento+de+revestimento."
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contato pelo WhatsApp"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    <span>Falar no WhatsApp</span>
+  </a>
+
+  <!-- SCREEN READER ONLY STYLE -->
+  <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}</style>
+
+  <!-- SCRIPTS (minimal, no frameworks) -->
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => observer.observe(el));
+
+    // CTA Form handler
+    function handleCTAForm(e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome-cta').value.trim();
+      const phone = document.getElementById('telefone-cta').value.trim();
+      const email = document.getElementById('email-cta').value.trim();
+      const mensagem = document.getElementById('mensagem-cta').value.trim();
+      
+      let msg = `Olá! Meu nome é ${nome}. Gostaria de um orçamento de revestimento.`;
+      if (phone) msg += `\n\nWhatsApp: ${phone}`;
+      if (email) msg += `\nEmail: ${email}`;
+      if (mensagem) msg += `\n\nMensagem: ${mensagem}`;
+      
+      window.open('https://wa.me/5511999999999?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer');
+    }
+  </script>
+
+</body>
+</html>
