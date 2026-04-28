@@ -871,7 +871,7 @@
   </script>
 </head>
 
-<body>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
 
   <!-- NAVIGATION -->
   <nav id="navbar" role="navigation" aria-label="Menu principal">
@@ -1411,6 +1411,18 @@
       
       window.open('https://wa.me/5511999999999?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer');
     }
+
+    // Anti-clone protection
+    document.addEventListener('keydown', function(e) {
+      if ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S' || e.key === 'i' || e.key === 'I')) {
+        e.preventDefault();
+        return false;
+      }
+    });
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      return false;
+    });
   </script>
 
 </body>
